@@ -1,0 +1,102 @@
+html{
+  /* コピー禁止！！ */
+  user-select: none;
+  -webkit-user-select: none;
+  /* ズーム禁止 */
+  touch-action: pan-x pan-y;
+  -webkit-touch-action: pan-x pan-y;
+}
+
+body{
+  background-color: #fff;
+  color: #000;
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  height: 100%;
+  width: 100%;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+  position: relative;
+}
+
+.page-content{
+  background-color: #fff;
+  box-shadow: 0 0 3px #333;
+  color: var(--txt);
+  display: block;
+  font-size: 62.5%;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 0;
+}
+
+.MO{
+  background-color: #fff;
+  height: 100dvh;
+  width: 100dvw;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+
+  .MO-content-left{
+    background-color: var(--primary);
+    height: 100dvh;
+    width: 15dvw;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  .MO-content-right{
+    height: 100dvh;
+    width: 85dvw;
+    margin-left: auto;
+    overflow-y: scroll;
+
+    .list{
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      margin: 0 auto;
+      width: 90%;
+
+      .list-content{
+        margin: 20px 0;
+        width: 25%;
+
+        .inner{
+          aspect-ratio: 9/16;
+          border-radius: 10px;
+          box-shadow: 0 0 5px #333;
+          margin: 0 auto;
+          overflow: hidden;
+          width: 90%;
+
+          .txtBox{
+            margin: 20px auto;
+            width: 90%;
+
+            > *{
+              margin: 4px 0;
+            }
+            .name{
+              font-size: 1.6em;
+            }
+            .price{
+              font-size: 1.4em;
+            }
+          }
+          .orderBox{
+            margin: 20px auto;
+            width: 90%;
+          }
+        }
+      }
+    }
+  }
+}

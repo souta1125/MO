@@ -1,0 +1,54 @@
+.spinnerBtn-wrap{
+  .spinnerBtn-inner{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    > *{
+      height: 38px;
+      width: 38px;
+      outline: none;
+    }
+    button{
+      border: 2px solid var(--tertiary);
+      border-radius: 50%;
+      cursor: not-allowed;
+      position: relative;
+
+      &::before, &.spinnerBtn-plus::after{
+        background-color: var(--tertiary);
+        border-radius: 999px;
+        content: '';
+        display: block;
+        height: 2px;
+        width: 28px;
+        position: absolute;
+        top: calc(50% - 1px);
+        left: calc(50% - 14px);
+      }
+      &.spinnerBtn-plus::after{
+        transform: rotate(90deg);
+      }
+
+      &[aria-disabled="false"]{
+        border-color: var(--primary);
+        cursor: pointer;
+
+        &::before, &::after{
+          background-color: var(--primary);
+        }
+      }
+    }
+    input{
+      appearance: none;
+      font-size: 2.0em;
+      font-weight: bold;
+      margin: 0 10px;
+      text-align: center;
+
+      &::-webkit-inner-spin-button{
+        appearance: none;
+      }
+    }
+  }
+}
